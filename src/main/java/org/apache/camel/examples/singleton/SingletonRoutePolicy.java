@@ -80,7 +80,7 @@ public class SingletonRoutePolicy implements RoutePolicy, Service {
     if (_pool != null) {
       _pool.shutdown();
     }
-    if (_lock != null) {
+    if (_lock != null && _lock.isValid()) {
       _lock.release();
     }
     if (_raf != null) {
